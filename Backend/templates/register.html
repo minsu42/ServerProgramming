@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('register') }}" method="post">
+        <h1>회원가입</h1>
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required>
+
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required>
+
+        <h3>제외할 음식점 카테고리를 선택하세요:</h3>
+        {% for category in categories %}
+            <label for="excluded_{{ category }}">{{ category.replace('_', ' ').title() }}:</label>
+            <input type="checkbox" id="excluded_{{ category }}" name="excluded_{{ category }}" value="True">
+            <br>
+        {% endfor %}
+
+        <input type="submit" value="회원가입">
+    </form>
+</body>
+</html>

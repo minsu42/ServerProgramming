@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <form id="signupForm">
+        <div class="signup-title">회원가입</div>
+        <!-- Input Group for ID -->
+        <div class="input-box" id="input-id">
+            <input type="text" id="user-id" name="user-id" placeholder="아이디">
+        </div>
+        <!-- Input Group for Password -->
+        <div class="input-box" id="input-password">
+            <input type="password" id="user-password" name="user-password" placeholder="비밀번호">
+        </div>
+        <!-- Input Group for Username -->
+        <div class="input-box" id="input-username">
+            <input type="text" id="user-username" name="user-username" placeholder="이름">
+        </div>
+
+        <div class="non-preferred-title">비선호 카테고리 추가</div>
+        <div class="category-title" style="left: 48px; top: 330px;">국가별</div>
+        <div class="category" style="left: 48px; top: 360px;" id="korean_restaurant">한식</div>
+        <div class="category" style="left: 153.5px; top: 360px;" id="japanese_restaurant">일식</div>
+        <div class="category" style="left: 259px; top: 360px;" id="chinese_restaurant">중식</div>
+        <div class="category" style="left: 48px; top: 405px;" id="american_restaurant">미국</div>
+        <div class="category" style="left: 153.5px; top: 405px;" id="brazilian_restaurant">브라질</div>
+        <div class="category" style="left: 259px; top: 405px;" id="italian_restaurant">이탈리아</div>
+        <div class="category" style="left: 48px; top: 450px;" id="vietnamese_restaurant">베트남</div>
+
+        <div class="category-title" style="left: 48px; top: 520px;">음식 종류별</div>
+        <div class="category" style="left: 48px; top: 550px;" id="barbecue_restaurant">고깃집</div>
+        <div class="category" style="left: 153.5px; top: 550px;" id="fast_food_restaurant">패스트푸드</div>  
+        <div class="category" style="left: 259px; top: 550px;" id="pizza_restaurant">피자</div>
+        <div class="category" style="left: 48px; top: 595px;" id="sandwich_shop">샌드위치</div>
+        <div class="category" style="left: 153.5px; top: 595px;" id="bakery">베이커리</div>
+
+        <div class="signup-button" onclick="submitForm()">완료</div>
+    </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+</body>
+</html>

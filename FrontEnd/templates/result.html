@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>추천</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+    <div class="title">ㅈ.ㅅ.ㅊ</div>
+        
+    <div class="top" id="top">Top1</div>
+
+<!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% if place_result|length > 0 %}
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="card">
+                        <h2 class="restaurant-name">
+                            <a href="{{ place_result[0].place_url }}">{{ place_result[0].answer_place['name'] }}</a>
+                        </h2>
+                        <img src="{{ place_result[0].static_map }}" alt="식당 이미지" class="restaurant-image">
+                        <p class="restaurant-rating">rating : {{ place_result[0].answer_place['rating'] }}</p>
+                        <p class="restaurant-distance">식당까지의 거리 : {{ place_result[0].dis }}m</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if place_result|length > 1 %}
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="card">
+                        <h2 class="restaurant-name">
+                            <a href="{{ place_result[1].place_url }}">{{ place_result[1].answer_place['name'] }}</a>
+                        </h2>
+                        <img src="{{ place_result[1].static_map }}" alt="식당 이미지" class="restaurant-image">
+                        <p class="restaurant-rating">rating : {{ place_result[1].answer_place['rating'] }}</p>
+                        <p class="restaurant-distance">식당까지의 거리 : {{ place_result[1].dis }}m</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if place_result|length > 2 %}
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="card">
+                        <h2 class="restaurant-name">
+                            <a href="{{ place_result[2].place_url }}">{{ place_result[2].answer_place['name'] }}</a>
+                        </h2>
+                        <img src="{{ place_result[2].static_map }}" alt="식당 이미지" class="restaurant-image">
+                        <p class="restaurant-rating">rating : {{ place_result[2].answer_place['rating'] }}</p>
+                        <p class="restaurant-distance">식당까지의 거리 : {{ place_result[2].dis }}m</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="button" onclick="location.href='{{ url_for('question', question_id=1) }}'">재검색</button>
+        <button class="button"  onclick="checkLogin({{ is_authenticated | tojson }})">내 정보</button>
+    </div>
+
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/result.js') }}"></script>
+</body>
+</html>

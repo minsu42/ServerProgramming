@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>결과</title>
+</head>
+<body>
+    <h1>선택된 옵션</h1>
+    <p>시간대: {{ question1_answer }}</p>
+    <p>거리: {{ question2_answer }}</p>
+
+    {% if excluded_restaurants %}
+        <h2>제외된 음식점 카테고리</h2>
+        <ul>
+            {% for category, excluded in excluded_restaurants.items() %}
+                {% if excluded %}
+                    <li>{{ category.replace('_', ' ').title() }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- 구글 API를 사용하여 음식점 정보 가져오기 부분은 제외되었습니다. -->
+</body>
+</html>

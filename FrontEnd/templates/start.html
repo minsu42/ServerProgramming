@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>시작하기</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/start.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="title">ㅈ.ㅅ.ㅊ</div>
+        <img class="image-placeholder" src="../static/loginimage.png" />
+        <div class="button start-button" onclick="location.href='{{ url_for('question', question_id=1) }}'">시작하기</div>
+        <div class="button login-button" onclick="location.href='{{ url_for('login') }}'">로그인하기</div>
+    </div>
+    <script src="{{ url_for('static', filename='js/start.js') }}"></script>
+</body>
+</html>

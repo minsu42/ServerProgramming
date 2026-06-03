@@ -1,0 +1,117 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    width: 390px;
+    height: 760px;
+    background: #F9F9F9;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 회원가입 */
+.signup-title {
+position: absolute;
+left: 156px;
+top: 65px;
+color: black;
+font-size: 21px;
+font-weight: 600;
+}
+.label {
+    position: absolute;
+    left: 82px;
+    color: #6B6E6F;
+    font-size: 14px;
+    font-weight: 600;
+    }
+.label.id {
+    top: 125px;
+}
+.label.password {
+    top: 171px;
+}
+.label.username {
+    top: 217px; 
+}
+
+input[type="text"], input[type="password"] {
+    width: 247px;
+    height: 28px;
+    left: 72px;
+    position: absolute;
+    background: white;
+    border: 1px solid #264653;
+}
+
+input[type="text"]#user-id { top: 119px; }
+input[type="password"] { top: 165px; }
+input[type="text"]#user-username { top: 211px; }
+
+/* 비선호 카테고리 */
+.non-preferred-title {
+    left: 100px;
+    top: 273px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 800;
+}
+.category-title {
+    position: absolute;
+    color: black;
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+.category {
+    width: 83px;
+    height: 29px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    border: 1px solid #E9C46A;
+    background: white;
+    position:absolute;
+    cursor: pointer;
+    text-align: center;
+    color: rgb(27, 27, 27);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    line-height: 29px;
+    margin: 0 auto;
+}
+
+
+.active {
+    background: #E9C46A !important;
+}
+
+/* 완료 */
+.signup-button {
+    width: 194px;
+    height: 49px;
+    left: 98px;
+    top: 670px;
+    position: absolute;
+    background: #264653;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 49px;
+    text-align: center;
+    cursor: pointer;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>카테고리 수정</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/myaccount.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <img class=img src="{{ url_for('static', filename='../static/back.png') }}" alt="뒤로 가기" id="back-button" onclick="history.back()">
+        <div class="account-title">내 정보</div>
+
+        <div class="info-change-title">비선호 카테고리 수정</div>
+            <div class="category-title" style="left: 48px; top: 170px;">국가별</div>
+            <div class="category" style="left: 48px; top: 210px;" id="korean_restaurant" onclick="toggleActive(this)">한식</div>
+            <div class="category" style="left: 153.5px; top: 210px;" id="japanese_restaurant" onclick="toggleActive(this)">일식</div>
+            <div class="category" style="left: 259px; top: 210px;" id="chinese_restaurant" onclick="toggleActive(this)">중식</div>
+            <div class="category" style="left: 48px; top: 260px;" id="american_restaurant" onclick="toggleActive(this)">미국</div>
+            <div class="category" style="left: 153.5px; top: 260px;" id="brazilian_restaurant" onclick="toggleActive(this)">브라질</div>
+            <div class="category" style="left: 259px; top: 260px;" id="italian_restaurant" onclick="toggleActive(this)">이탈리아</div>
+            <div class="category" style="left: 48px; top: 310px;" id="vietnamese_restaurant" onclick="toggleActive(this)">베트남</div>
+
+            <div class="category-title" style="left: 48px; top: 400px;" onclick="toggleActive(this)">음식 종류별</div>
+            <div class="category" style="left: 48px; top: 450px;" id="barbecue_restaurant" onclick="toggleActive(this)">고깃집</div>
+            <div class="category" style="left: 153.5px; top: 450px;" id="fast_food_restaurant" onclick="toggleActive(this)">패스트푸드</div>
+            <div class="category" style="left: 259px; top: 450px;" id="pizza_restaurant" onclick="toggleActive(this)">피자</div>
+            <div class="category" style="left: 48px; top: 500px;" id="sandwich_shop" onclick="toggleActive(this)">샌드위치</div>
+            <div class="category" style="left: 153.5px; top: 500px;" id="bakery" onclick="toggleActive(this)">베이커리</div>
+        
+        <div class="signup-button" onclick="submitForm()">완료</div>
+        <script src="{{ url_for('static', filename='js/modify_categories.js') }}"></script>
+    </body>
+</html>

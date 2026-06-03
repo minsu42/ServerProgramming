@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>내 정보</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/myaccount.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <img class=img src="{{ url_for('static', filename='../static/back.png') }}" alt="뒤로 가기" id="back-button" onclick="history.back()">
+        <div class="account-title">내 정보</div>
+        <div class="logout" onclick="logout()">로그아웃</div>
+        <div class="edit-dislike-category" onclick="location.href='{{ url_for('modify_categories') }}'">비선호 카테고리 수정</div>
+        <div class="delete-account" onclick="deleteAccount()">계정 삭제</div>
+    </div>
+    <script src="{{ url_for('static', filename='js/myaccount.js') }}"></script>
+</body>
+</html>

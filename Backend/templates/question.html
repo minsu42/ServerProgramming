@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>질문</title>
+</head>
+<body>
+    <h1>{{ question }}</h1>
+    <form id="question-form">
+        {% for option in options %}
+            <input type="radio" name="answer" value="{{ option }}" required> {{ option }}<br>
+        {% endfor %}
+        <button type="submit">다음</button>
+    </form>
+
+    <script>
+    document.getElementById('question-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var answer = document.querySelector('input[name="answer"]:checked').value;
+        var question_id = {{ question_id }};
+
+        fetch("{{ url_for('answer') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question_id: question_id,
+                answer: answer
+            })
+        }).then(response => response.json()).then(data => {
+            if (data.redirect) {
+                window.location.href = data.redirect;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

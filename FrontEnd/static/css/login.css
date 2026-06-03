@@ -1,0 +1,99 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    width: 390px;
+    height: 760px;
+    background: #F9F9F9;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.title {
+    position: absolute;
+    color: #E76F51;
+    font-size: 100px;
+    font-weight: 600;
+    word-wrap: break-word;
+    left: 25px;
+    top: 200px;
+}
+.image{
+    width: 225px;
+    height: 25px;
+    left: 82px;
+    top: 195px;
+    position: absolute
+}
+.input-box {
+    width: 280px;
+    position: absolute;
+    background: white;
+    box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.25);
+    border: 2px #264653 solid;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.input-box input {
+    width: 100%; /* input의 너비를 .input-box와 동일하게 조정 */
+    border: none; /* 테두리 제거 */
+    background-color: transparent; /* 배경색 투명 */
+    padding: 8px; /* 내부 여백 추가 */
+    box-sizing: border-box; /* padding을 포함한 총 너비와 높이 유지 */
+}
+.input-box input:focus {
+    outline: none; /* 대부분의 브라우저에서 기본적으로 적용되는 포커스 테두리 제거 */
+    border: none; /* 테두리 제거 */
+}
+#input-id {
+    left: 55px;
+    top: 410px;
+}
+#input-password {
+    left: 55px;
+    top: 475px; 
+}
+.label {
+    display: block; /* 라벨을 블록 요소로 변경 */
+    color: #6B6E6F;
+    font-size: 20px;
+    margin-bottom: 5px; /* 라벨과 입력 필드 사이의 간격 */
+}
+.login-button {
+    width: 280px;
+    height: 60px;
+    position: absolute;
+    background: #264653;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    left: 55px;
+    top: 580px;
+}
+.signup {
+    width: 40px;
+    height: 10px;
+    left: 173px;
+    top: 650px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(118, 118, 118);
+    text-decoration-line: underline;
+    font-size: 10px;
+    cursor: pointer;
+}

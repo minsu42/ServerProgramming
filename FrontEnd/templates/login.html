@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>로그인</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/login.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form class="container" action="{{ url_for('login') }}" method="post">
+        <div class="title">ㅈ.ㅅ.ㅊ</div>
+        <img class="image" src="../static/loginimage.png">
+        <!-- Input Group for ID -->
+        <div class="input-box" id="input-id">
+            <input type="text" id="user-id" name="user-id" placeholder="아이디" required>
+        </div>
+        <!-- Input Group for Password -->
+        <div class="input-box" id="input-password">
+            <input type="password" id="user-password" name="user-password" placeholder="비밀번호" required>
+        </div>
+        <button type="submit" class="login-button">로그인</button>
+        <div class="signup" onclick="location.href='{{ url_for('signup') }}'">회원가입</div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </form>
+</body>
+</html>
